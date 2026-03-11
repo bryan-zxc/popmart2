@@ -64,7 +64,7 @@ row_count = len(result)
 For Python scripts (when the check logic is too complex for pure SQL), run with bash:
 
 ```bash
-python data/validation/scripts/chk_<name>.py
+uv run python data/validation/scripts/chk_<name>.py
 ```
 
 Capture:

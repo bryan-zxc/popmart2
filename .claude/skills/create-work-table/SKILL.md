@@ -38,7 +38,7 @@ If the user provides a file but no table name, suggest one based on the file con
 Run the diagnostic script to sample the file and get DuckDB's type inferences. Use `--output-rows 100` to include sample data rows for the type review page:
 
 ```bash
-python .claude/skills/create-work-table/scripts/sample_file.py \
+uv run python .claude/skills/create-work-table/scripts/sample_file.py \
   --file-path <path-to-file> \
   --limit 10000 \
   --output-rows 100
@@ -133,7 +133,7 @@ steps:
 After the table is created, run the column stats script. Pass the approved classification from step 4 so the script knows which stats to compute for each column:
 
 ```bash
-python .claude/skills/create-work-table/scripts/column_stats.py \
+uv run python .claude/skills/create-work-table/scripts/column_stats.py \
   --db-path <path-to-duckdb> \
   --table-name l10wrk_<tablename> \
   --column-types '{"customer_id": "categorical", "revenue": "numeric", "receipt_date": "date", "region": "categorical"}'
