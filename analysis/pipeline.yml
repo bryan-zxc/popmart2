@@ -3,3 +3,5 @@ steps:
     script: l10wrk_customers.py
   - name: Ingest sales
     script: l10wrk_sales.py
+  - name: Ingest products
+    script: l10wrk_products.py
