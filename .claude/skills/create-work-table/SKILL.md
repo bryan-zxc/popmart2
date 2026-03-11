@@ -112,6 +112,12 @@ Save the script to `analysis/l10wrk_<tablename>.py`. One script per table, named
 
 Execute the script to create the table.
 
+### 5a. Handle rejected rows
+
+If the ingestion script reports rejected rows (via `store_rejects`), read `references/ingestion-guide.md` for how to diagnose and resolve them. Always attempt to fix the ingestion so all rows make it into the table.
+
+If rows were rejected due to a data quality issue in the source (not a processing failure on our side), use `/record-data-check` to formally record the finding. `/record-data-check` will create the check script, materialise a `val_` table with the actual rejected rows if client input is needed, and call `/append-dv` to add it to the data validation report.
+
 ### 6. Add to pipeline
 
 Add the script as a step in `analysis/pipeline.yml`, creating the file if it doesn't exist:
