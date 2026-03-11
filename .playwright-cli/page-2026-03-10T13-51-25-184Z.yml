@@ -1,0 +1,17 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e5]: ta
+    - heading "Team Agent" [level=1] [ref=e6]
+    - button "Sign in with Google" [ref=e7] [cursor=pointer]
+    - generic [ref=e8]:
+      - generic [ref=e10]: Dev login
+      - generic [ref=e11]:
+        - button "A Alice" [ref=e12] [cursor=pointer]:
+          - generic [ref=e13]: A
+          - generic [ref=e14]: Alice
+        - button "B Bob" [ref=e15] [cursor=pointer]:
+          - generic [ref=e16]: B
+          - generic [ref=e17]: Bob
+  - button "Open Next.js Dev Tools" [ref=e23] [cursor=pointer]:
+    - img [ref=e24]
+  - alert [ref=e4]

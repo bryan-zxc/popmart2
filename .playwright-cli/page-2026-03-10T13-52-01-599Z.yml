@@ -1,0 +1,47 @@
+- generic [active] [ref=e1]:
+  - button "Open Next.js Dev Tools" [ref=e23] [cursor=pointer]:
+    - img [ref=e24]
+  - alert [ref=e4]
+  - generic [ref=e64]:
+    - generic [ref=e65]:
+      - generic [ref=e66]: popmart
+      - generic [ref=e67]: /
+      - button "main" [ref=e69] [cursor=pointer]:
+        - img [ref=e70]
+        - text: main
+        - img [ref=e74]
+      - button "← Projects" [ref=e76] [cursor=pointer]
+    - generic [ref=e77]:
+      - generic [ref=e78]:
+        - button "Chat" [ref=e79] [cursor=pointer]:
+          - img [ref=e80]
+        - button "Files" [ref=e82] [cursor=pointer]:
+          - img [ref=e83]
+        - button "Data" [ref=e85] [cursor=pointer]:
+          - img [ref=e86]
+        - button "Favourites" [ref=e90] [cursor=pointer]:
+          - img [ref=e91]
+        - button "Members" [ref=e93] [cursor=pointer]:
+          - img [ref=e94]
+        - button "Admin" [ref=e97] [cursor=pointer]:
+          - img "Admin" [ref=e98]
+        - button "Terminal" [ref=e99] [cursor=pointer]:
+          - img [ref=e100]
+      - button "Toggle theme" [ref=e103] [cursor=pointer]:
+        - img [ref=e104]
+    - complementary [ref=e106]:
+      - generic [ref=e107]:
+        - generic [ref=e109]:
+          - generic [ref=e110]: ta
+          - generic [ref=e111]: Team Agent
+        - generic [ref=e112]:
+          - generic [ref=e113]: Rooms
+          - button "Create room" [ref=e114] [cursor=pointer]: +
+        - navigation [ref=e115]
+        - generic [ref=e117]:
+          - generic [ref=e118]: A
+          - generic [ref=e119]:
+            - generic [ref=e120]: Alice
+            - generic [ref=e121]: human
+    - main [ref=e122]:
+      - paragraph [ref=e133]: Open a room or file to get started

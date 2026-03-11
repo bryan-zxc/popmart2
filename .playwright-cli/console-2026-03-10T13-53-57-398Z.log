@@ -1,0 +1,10 @@
+[ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:8000/auth/me:0
+[ERROR] Failed to fetch report data: TypeError: Cannot read properties of null (reading 'style')
+    at render (http://localhost:8000/projects/76810102-7401-46c7-8b79-f289be3f3eeb/raw/data/validation/report.html:642:41)
+    at fetchReportData (http://localhost:8000/projects/76810102-7401-46c7-8b79-f289be3f3eeb/raw/data/validation/report.html:535:5) @ http://localhost:8000/projects/76810102-7401-46c7-8b79-f289be3f3eeb/raw/data/validation/report.html:536
+[ERROR] Failed to fetch report data: TypeError: Cannot read properties of null (reading 'style')
+    at render (http://localhost:8000/projects/76810102-7401-46c7-8b79-f289be3f3eeb/raw/data/validation/report.html:642:41)
+    at fetchReportData (http://localhost:8000/projects/76810102-7401-46c7-8b79-f289be3f3eeb/raw/data/validation/report.html:535:5) @ http://localhost:8000/projects/76810102-7401-46c7-8b79-f289be3f3eeb/raw/data/validation/report.html:536
+[ERROR] Failed to fetch report data: TypeError: Cannot read properties of null (reading 'style')
+    at render (http://localhost:8000/projects/76810102-7401-46c7-8b79-f289be3f3eeb/raw/data/validation/report.html:642:41)
+    at fetchReportData (http://localhost:8000/projects/76810102-7401-46c7-8b79-f289be3f3eeb/raw/data/validation/report.html:535:5) @ http://localhost:8000/projects/76810102-7401-46c7-8b79-f289be3f3eeb/raw/data/validation/report.html:536

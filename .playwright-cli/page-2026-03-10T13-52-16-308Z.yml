@@ -1,0 +1,52 @@
+- generic [ref=e1]:
+  - button "Open Next.js Dev Tools" [ref=e23] [cursor=pointer]:
+    - img [ref=e24]
+  - alert [ref=e4]
+  - generic [ref=e64]:
+    - generic [ref=e65]:
+      - generic [ref=e66]: popmart
+      - generic [ref=e67]: /
+      - button "main" [ref=e69] [cursor=pointer]:
+        - img [ref=e70]
+        - text: main
+        - img [ref=e74]
+      - button "← Projects" [ref=e76] [cursor=pointer]
+    - generic [ref=e77]:
+      - generic [ref=e78]:
+        - button "Chat" [ref=e79] [cursor=pointer]:
+          - img [ref=e80]
+        - button "Files" [ref=e82] [cursor=pointer]:
+          - img [ref=e83]
+        - button "Data" [ref=e85] [cursor=pointer]:
+          - img [ref=e86]
+        - button "Favourites" [active] [ref=e90] [cursor=pointer]:
+          - img [ref=e91]
+        - button "Members" [ref=e93] [cursor=pointer]:
+          - img [ref=e94]
+        - button "Admin" [ref=e97] [cursor=pointer]:
+          - img "Admin" [ref=e98]
+        - button "Terminal" [ref=e99] [cursor=pointer]:
+          - img [ref=e100]
+      - button "Toggle theme" [ref=e103] [cursor=pointer]:
+        - img [ref=e104]
+    - complementary [ref=e106]:
+      - generic [ref=e134]:
+        - generic [ref=e136]:
+          - generic [ref=e137]: ta
+          - generic [ref=e138]: Team Agent
+        - generic [ref=e140]: Favourites
+        - generic [ref=e141]:
+          - button "Board board.html" [ref=e142] [cursor=pointer]:
+            - img [ref=e143]
+            - generic [ref=e145]: Board
+            - generic [ref=e146]: board.html
+          - button "Timeline timeline.html" [ref=e147] [cursor=pointer]:
+            - img [ref=e148]
+            - generic [ref=e150]: Timeline
+            - generic [ref=e151]: timeline.html
+          - button "Validation Report report.html" [ref=e152] [cursor=pointer]:
+            - img [ref=e153]
+            - generic [ref=e155]: Validation Report
+            - generic [ref=e156]: report.html
+    - main [ref=e122]:
+      - paragraph [ref=e133]: Open a room or file to get started

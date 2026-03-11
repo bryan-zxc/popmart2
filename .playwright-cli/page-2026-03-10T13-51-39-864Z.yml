@@ -1,0 +1,33 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e27]:
+      - generic [ref=e28]:
+        - generic [ref=e29]: ta
+        - heading "Team Agent" [level=1] [ref=e30]
+      - generic [ref=e31]:
+        - button "Toggle terminal" [ref=e32] [cursor=pointer]:
+          - img [ref=e33]
+        - button "Toggle theme" [ref=e35] [cursor=pointer]: ☽
+        - generic [ref=e36]:
+          - generic [ref=e37]: A
+          - generic [ref=e38]: Alice
+          - button "Sign out" [ref=e39] [cursor=pointer]
+    - main [ref=e40]:
+      - generic [ref=e41]:
+        - heading "Projects" [level=2] [ref=e42]
+        - button "+ New Project" [ref=e43] [cursor=pointer]
+      - button "P popmart https://github.com/bryan-zxc/popmart.git 5 members · 0 rooms Refresh project" [ref=e45] [cursor=pointer]:
+        - generic [ref=e46]: P
+        - generic [ref=e47]:
+          - generic [ref=e49]: popmart
+          - generic [ref=e50]: https://github.com/bryan-zxc/popmart.git
+          - generic [ref=e51]: 5 members · 0 rooms
+        - button "Refresh project" [ref=e52]:
+          - img [ref=e53]
+    - generic [ref=e57]:
+      - generic [ref=e58]: Terminal
+      - button "Close terminal" [ref=e59] [cursor=pointer]:
+        - img [ref=e60]
+  - button "Open Next.js Dev Tools" [ref=e23] [cursor=pointer]:
+    - img [ref=e24]
+  - alert [ref=e4]
