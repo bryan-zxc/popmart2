@@ -1,0 +1,3 @@
+steps:
+  - name: Ingest customers
+    script: l10wrk_customers.py
