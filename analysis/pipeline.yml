@@ -5,3 +5,7 @@ steps:
     script: l10wrk_sales.py
   - name: Ingest products
     script: l10wrk_products.py
+  - name: Ingest stores
+    script: l10wrk_stores.py
+  - name: Ingest exchange rates
+    script: l10wrk_exchange_rates.py
