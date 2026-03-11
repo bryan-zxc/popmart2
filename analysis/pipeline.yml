@@ -1,4 +1,5 @@
 steps:
+  # Phase 1: Ingestion
   - name: Ingest customers
     script: l10wrk_customers.py
   - name: Ingest sales
@@ -9,3 +10,23 @@ steps:
     script: l10wrk_stores.py
   - name: Ingest exchange rates
     script: l10wrk_exchange_rates.py
+
+  # Phase 3: Derived tables
+  - name: Create sales in USD (foundation)
+    script: l20drv_sales_usd.sql
+  - name: Aggregate product performance
+    script: l20drv_product_performance.sql
+  - name: Aggregate store performance
+    script: l20drv_store_performance.sql
+  - name: Calculate store product mix
+    script: l20drv_store_product_mix.sql
+
+  # Phase 3: Export tables
+  - name: Export product profitability
+    script: l30exp_product_profitability.sql
+  - name: Export category profitability
+    script: l30exp_category_profitability.sql
+  - name: Export store ranking
+    script: l30exp_store_ranking.sql
+  - name: Export store insights
+    script: l30exp_store_insights.sql
