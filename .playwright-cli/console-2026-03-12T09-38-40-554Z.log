@@ -1,0 +1,2 @@
+[ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ http://localhost:8000/auth/me:0
+[ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ http://localhost:8000/auth/dev-users:0
