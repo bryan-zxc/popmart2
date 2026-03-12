@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contoso Electronics — Global Sales Analysis 2020-2021</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #171719; --surface: #1f1f24; --elevated: #26262c;
+    --border: #2a2a2f; --border-subtle: #35353c;
+    --heading: #f0eff5; --subheading: #c8c8d0; --body: #8a8a95;
+    --muted: #6b6b78; --disabled: #44444f;
+    --accent: #7c8ae5; --accent-tint: rgba(124,138,229,0.1);
+    --accent-border: rgba(124,138,229,0.18);
+    --green: #5b9a7a; --green-tint: rgba(91,154,122,0.1);
+    --green-border: rgba(91,154,122,0.15);
+    --amber: #e0a05f; --amber-tint: rgba(224,160,95,0.12);
+    --rose: #d46b6b; --rose-tint: rgba(212,107,107,0.12);
+    --frame-bg: linear-gradient(160deg, #1a1a22 0%, #171719 100%);
+    --frame-border: #22223a;
+    --image-bg: linear-gradient(135deg, #1a1a24 0%, #14141a 100%);
+    --nav-bg: rgba(17,17,19,0.88);
+    --progress-track: #1f1f24;
+    --font-scale: 1;
+    --text-xs: calc(11px * var(--font-scale));
+    --text-sm: calc(13px * var(--font-scale));
+    --text-base: calc(15px * var(--font-scale));
+    --text-lg: calc(20px * var(--font-scale));
+    --text-xl: calc(28px * var(--font-scale));
+    --text-2xl: calc(42px * var(--font-scale));
+    --text-3xl: calc(54px * var(--font-scale));
+  }
+  html.light {
+    --bg: #faf9f7; --surface: #ffffff; --elevated: #f5f3ef;
+    --border: #e8e4dd; --border-subtle: #d9d4cc;
+    --heading: #1a1a1f; --subheading: #2a2a2f; --body: #6b6b78;
+    --muted: #8a8a95; --disabled: #b5b5be;
+    --accent: #5560c0; --accent-tint: rgba(85,96,192,0.07);
+    --accent-border: rgba(85,96,192,0.14);
+    --green: #3d8a5e; --green-tint: rgba(61,138,94,0.07);
+    --green-border: rgba(61,138,94,0.12);
+    --amber: #c49040; --amber-tint: rgba(196,144,64,0.08);
+    --rose: #c44e4e; --rose-tint: rgba(196,78,78,0.08);
+    --frame-bg: linear-gradient(160deg, #fff 0%, #f5f5fa 100%);
+    --frame-border: #dddcec;
+    --image-bg: linear-gradient(135deg, #f0eee8 0%, #e8e5de 100%);
+    --nav-bg: rgba(255,255,255,0.9);
+    --progress-track: #e8e4dd;
+  }
+
+  body {
+    font-family: 'Outfit', system-ui, sans-serif;
+    background: #0e0e10; margin: 0; padding: 0;
+    overflow: hidden; height: 100vh; width: 100vw;
+    display: flex; align-items: center; justify-content: center;
+  }
+  html.light body { background: #e8e5e0; }
+
+  .viewport {
+    width: 1280px; height: 720px; position: absolute;
+    top: 50%; left: 50%; transform-origin: center center;
+    overflow: hidden; background: var(--bg); outline: none;
+  }
+
+  .progress-bar {
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 3px; background: var(--progress-track); z-index: 200;
+  }
+  .progress-bar .fill {
+    height: 100%; background: var(--accent);
+    transition: width 0.25s ease;
+  }
+
+  .slide {
+    position: absolute; inset: 0; top: 3px;
+    display: none; flex-direction: column;
+    font-family: 'Outfit', sans-serif;
+    font-size: var(--text-base); color: var(--body);
+  }
+  .slide.active { display: flex; }
+
+  /* -- Title Slide -- */
+  .slide-title {
+    justify-content: center; align-items: center; text-align: center;
+    padding: 28px 64px;
+  }
+  .slide-title .inner-frame {
+    position: absolute; inset: 22px 38px; border-radius: 18px;
+    background: var(--frame-bg); border: 1px solid var(--frame-border);
+  }
+  .slide-title .accent-dot {
+    position: absolute; top: 36px; right: 64px; width: 12px; height: 12px;
+    border-radius: 50%; background: var(--accent); z-index: 2;
+  }
+  .slide-title h2 {
+    font-weight: 800; font-size: 90px;
+    color: var(--heading); line-height: 1.05; position: relative; z-index: 1;
+    margin-bottom: 12px;
+  }
+  .slide-title .subtitle {
+    font-weight: 400; font-size: 23px;
+    color: var(--muted); position: relative; z-index: 1;
+  }
+  .slide-title .pill {
+    display: inline-block; font-size: 15px;
+    font-weight: 500; color: var(--accent);
+    background: var(--accent-tint); border: 1px solid var(--accent-border);
+    padding: 3px 15px; border-radius: 100px;
+    margin-top: 14px; position: relative; z-index: 1;
+  }
+
+  /* -- Section Divider -- */
+  .slide-section {
+    justify-content: flex-end; padding: 43px 64px 86px;
+  }
+  .slide-section .section-num {
+    font-weight: 800; font-size: 256px;
+    color: var(--accent); opacity: 0.06; position: absolute;
+    top: 36px; right: 50px; line-height: 1;
+  }
+  .slide-section .accent-line {
+    width: 50px; height: 4px; background: var(--accent);
+    border-radius: 2px; margin-bottom: 14px;
+  }
+  .slide-section h2 {
+    font-weight: 700; font-size: 76px;
+    color: var(--heading); line-height: 1.1; position: relative; z-index: 1;
+    margin-bottom: 8px;
+  }
+  .slide-section .section-sub {
+    font-weight: 400; font-size: 20px;
+    color: var(--muted); position: relative; z-index: 1;
+  }
+
+  /* -- Dashboard / KPI Overview -- */
+  .slide-dashboard {
+    justify-content: center; padding: 28px 50px; gap: 14px;
+  }
+  .slide-dashboard .dash-header {
+    display: flex; align-items: baseline; justify-content: space-between;
+  }
+  .slide-dashboard .dash-header h3 {
+    font-weight: 700; font-size: 36px; color: var(--heading);
+  }
+  .slide-dashboard .dash-header .period {
+    font-size: 13px; font-weight: 500;
+    color: var(--accent); background: var(--accent-tint);
+    border: 1px solid var(--accent-border);
+    padding: 3px 10px; border-radius: 100px;
+  }
+  .slide-dashboard .stat-row {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
+  }
+  .slide-dashboard .stat-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 18px 26px;
+    display: flex; flex-direction: column; justify-content: center; gap: 4px;
+  }
+  .slide-dashboard .stat-card .sc-label {
+    font-size: 11px; font-weight: 500;
+    text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted);
+  }
+  .slide-dashboard .stat-card .sc-value {
+    font-weight: 800; font-size: 44px;
+    color: var(--heading); line-height: 1.1;
+  }
+  .slide-dashboard .detail-row {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
+  }
+  .slide-dashboard .detail-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 14px 26px;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .slide-dashboard .detail-card .dc-header {
+    display: flex; align-items: center; gap: 6px;
+    padding-bottom: 8px; border-bottom: 1px solid var(--border);
+  }
+  .slide-dashboard .detail-card .dc-dot { width: 6px; height: 6px; border-radius: 50%; }
+  .slide-dashboard .detail-card .dc-title {
+    font-size: 14px; font-weight: 600; color: var(--subheading);
+  }
+  .slide-dashboard .detail-card ul {
+    list-style: none; display: flex; flex-direction: column; gap: 6px;
+  }
+  .slide-dashboard .detail-card li {
+    font-size: 13px; color: var(--body); line-height: 1.45;
+    padding-left: 13px; position: relative;
+  }
+  .slide-dashboard .detail-card li::before {
+    content: ''; position: absolute; left: 0; top: 6px;
+    width: 4px; height: 4px; border-radius: 50%; background: var(--disabled);
+  }
+
+  /* -- Bullet List -- */
+  .slide-bullets {
+    justify-content: center; padding: 36px 76px; gap: 22px;
+  }
+  .slide-bullets h3 {
+    font-weight: 700; font-size: 44px; color: var(--heading);
+  }
+  .slide-bullets ul {
+    list-style: none; display: flex; flex-direction: column; gap: 14px;
+  }
+  .slide-bullets li {
+    display: flex; align-items: flex-start; gap: 12px;
+    font-size: 20px; color: var(--body); line-height: 1.5;
+  }
+  .slide-bullets li .b {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--accent); flex-shrink: 0; margin-top: 7px;
+  }
+  .slide-bullets li strong { color: var(--subheading); font-weight: 600; }
+
+  /* -- Data Table -- */
+  .slide-table {
+    justify-content: center; padding: 28px 50px; gap: 14px;
+  }
+  .slide-table h3 {
+    font-weight: 700; font-size: 36px; color: var(--heading);
+  }
+  .slide-table table {
+    width: 100%; border-collapse: separate; border-spacing: 0;
+    border-radius: 12px; overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .slide-table thead th {
+    background: var(--surface); padding: 13px 26px;
+    font-size: 12px; font-weight: 600;
+    color: var(--subheading); text-align: left;
+    text-transform: uppercase; letter-spacing: 0.06em;
+    border-bottom: 1px solid var(--border);
+  }
+  .slide-table thead th:not(:last-child) { border-right: 1px solid var(--border); }
+  .slide-table tbody td {
+    padding: 11px 26px;
+    font-size: 13px;
+    color: var(--body); border-bottom: 1px solid var(--border);
+  }
+  .slide-table tbody td:not(:last-child) { border-right: 1px solid var(--border); }
+  .slide-table tbody tr:last-child td { border-bottom: none; }
+  .slide-table tbody td:first-child { font-weight: 600; color: var(--subheading); }
+  .slide-table .pill-sm {
+    display: inline-block; font-size: 10px;
+    font-weight: 500; padding: 2px 8px; border-radius: 100px;
+  }
+  .pill-green { color: var(--green); background: var(--green-tint); }
+  .pill-amber { color: var(--amber); background: var(--amber-tint); }
+  .pill-rose { color: var(--rose); background: var(--rose-tint); }
+
+  /* -- Cards Grid -- */
+  .slide-cards {
+    justify-content: center; padding: 28px 50px; gap: 18px;
+  }
+  .slide-cards h3 {
+    font-weight: 700; font-size: 40px; color: var(--heading);
+  }
+  .slide-cards .grid {
+    display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 15px;
+  }
+  .slide-cards .card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 14px; padding: 22px 26px; display: flex;
+    flex-direction: column; gap: 8px;
+  }
+  .slide-cards .card .icon {
+    width: 38px; height: 38px; border-radius: 9px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700; margin-bottom: 4px;
+  }
+  .slide-cards .card h4 {
+    font-size: 18px; font-weight: 600; color: var(--subheading);
+  }
+  .slide-cards .card .num {
+    font-size: 28px; font-weight: 800; color: var(--heading);
+  }
+  .slide-cards .card p {
+    font-size: 13px; color: var(--muted); line-height: 1.55;
+  }
+
+  /* -- Floating Nav Dock -- */
+  .nav-dock {
+    position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%);
+    display: flex; align-items: center; gap: 6px;
+    background: var(--nav-bg); backdrop-filter: blur(16px);
+    border: 1px solid var(--border); border-radius: 8px;
+    padding: 4px 8px; z-index: 300;
+    white-space: nowrap; user-select: none;
+    opacity: 0.5; transition: opacity 0.3s ease;
+  }
+  .nav-dock:hover { opacity: 1; }
+  .nav-dock .arr {
+    width: 30px; height: 30px; border-radius: 7px;
+    background: transparent; border: 1px solid var(--border);
+    color: var(--body); cursor: pointer; transition: all 0.2s;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; font-family: 'Outfit', sans-serif; padding: 0;
+  }
+  .nav-dock .arr:hover { background: var(--surface); color: var(--heading); }
+  .nav-dock .sep { width: 1px; height: 20px; background: var(--border); }
+  .nav-dock .slide-title-area {
+    display: flex; align-items: center; gap: 5px; min-width: 140px;
+  }
+  .nav-dock .tnum { font-size: 11px; font-weight: 600; color: var(--accent); }
+  .nav-dock .ttext {
+    font-size: 11px; font-weight: 500; color: var(--subheading);
+    max-width: 200px; overflow: hidden; text-overflow: ellipsis;
+  }
+  .nav-dock .page-count { font-size: 10px; font-weight: 500; color: var(--muted); }
+  .nav-dock .page-count .pc-current { color: var(--subheading); font-weight: 600; }
+  .nav-dock .pips { display: flex; gap: 5px; align-items: center; }
+  .nav-dock .pip {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--disabled); border: none; cursor: pointer;
+    transition: all 0.2s; padding: 0;
+  }
+  .nav-dock .pip.active { background: var(--accent); width: 18px; border-radius: 4px; }
+  .nav-dock .pip:hover:not(.active) { background: var(--body); }
+  .nav-dock .pip-divider {
+    width: 3px; height: 16px; border-radius: 2px;
+    background: var(--disabled); border: none; cursor: pointer;
+    transition: all 0.2s; padding: 0;
+  }
+  .nav-dock .pip-divider.active { background: var(--accent); }
+  .nav-dock .theme-toggle {
+    width: 30px; height: 30px; border-radius: 7px;
+    background: transparent; border: 1px solid var(--border);
+    color: var(--muted); cursor: pointer; transition: all 0.2s;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; padding: 0;
+  }
+  .nav-dock .theme-toggle:hover { background: var(--surface); color: var(--heading); }
+
+  /* -- Print Styles -- */
+  @page { size: 1280px 720px; margin: 0; }
+  @media print {
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+    html, html.light { color-scheme: light; }
+    body { background: white !important; padding: 0; margin: 0; display: block; overflow: visible !important; height: auto !important; width: auto !important; }
+    .viewport { width: auto !important; height: auto !important; position: static !important; transform: none !important; overflow: visible !important; background: white !important; }
+    .nav-dock, .progress-bar { display: none !important; height: 0 !important; overflow: hidden !important; }
+    .slide {
+      display: flex !important; position: relative !important;
+      width: 1280px; height: 720px;
+      page-break-after: always; break-after: page;
+      background: #faf9f7 !important;
+      --bg: #faf9f7; --surface: #ffffff; --elevated: #f5f3ef;
+      --border: #e8e4dd; --border-subtle: #d9d4cc;
+      --heading: #1a1a1f; --subheading: #2a2a2f; --body: #6b6b78;
+      --muted: #8a8a95; --disabled: #b5b5be;
+      --accent: #5560c0; --accent-tint: rgba(85,96,192,0.07);
+      --accent-border: rgba(85,96,192,0.14);
+      --green: #3d8a5e; --green-tint: rgba(61,138,94,0.07);
+      --green-border: rgba(61,138,94,0.12);
+      --amber: #c49040; --amber-tint: rgba(196,144,64,0.08);
+      --rose: #c44e4e; --rose-tint: rgba(196,78,78,0.08);
+      --frame-bg: linear-gradient(160deg, #fff 0%, #f5f5fa 100%);
+      --frame-border: #dddcec;
+      --image-bg: linear-gradient(135deg, #f0eee8 0%, #e8e5de 100%);
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="viewport" tabindex="0" id="viewport">
+  <div class="progress-bar"><div class="fill" id="progressFill"></div></div>
+
+  <!-- Slide 1: Title -->
+  <div class="slide slide-title active" data-title="Contoso Electronics">
+    <div class="inner-frame"></div>
+    <div class="accent-dot"></div>
+    <h2>Global Sales<br>Analysis</h2>
+    <div class="subtitle">Contoso Electronics • 2020-2021</div>
+    <div class="pill">Strategic Review</div>
+  </div>
+
+  <!-- Slide 2: Overview -->
+  <div class="slide slide-dashboard" data-title="Portfolio Overview">
+    <div class="dash-header">
+      <h3>Portfolio Overview</h3>
+      <div class="period">2020-2021</div>
+    </div>
+    <div class="stat-row">
+      <div class="stat-card">
+        <div class="sc-label">Total Revenue</div>
+        <div class="sc-value">$21.1M</div>
+      </div>
+      <div class="stat-card">
+        <div class="sc-label">Total Margin</div>
+        <div class="sc-value">$12.6M</div>
+      </div>
+      <div class="stat-card">
+        <div class="sc-label">Margin %</div>
+        <div class="sc-value">59.5%</div>
+      </div>
+      <div class="stat-card">
+        <div class="sc-label">Stores</div>
+        <div class="sc-value">67</div>
+      </div>
+    </div>
+    <div class="detail-row">
+      <div class="detail-card">
+        <div class="dc-header">
+          <div class="dc-dot" style="background: var(--accent);"></div>
+          <div class="dc-title">Channel Mix</div>
+        </div>
+        <ul>
+          <li>Physical stores: 66 locations</li>
+          <li>Physical revenue: $16.4M (77%)</li>
+          <li>Online revenue: $4.8M (23%)</li>
+        </ul>
+      </div>
+      <div class="detail-card">
+        <div class="dc-header">
+          <div class="dc-dot" style="background: var(--accent);"></div>
+          <div class="dc-title">Product Portfolio</div>
+        </div>
+        <ul>
+          <li>2,517 products across 8 categories</li>
+          <li>32 subcategories</li>
+          <li>Computers dominate (60% margin)</li>
+        </ul>
+      </div>
+      <div class="detail-card">
+        <div class="dc-header">
+          <div class="dc-dot" style="background: var(--accent);"></div>
+          <div class="dc-title">Strategic Focus</div>
+        </div>
+        <ul>
+          <li>Product line rationalisation</li>
+          <li>Store performance review</li>
+          <li>Best practice identification</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 3: Section Divider 1 -->
+  <div class="slide slide-section" data-title="Product Line Rationalisation">
+    <div class="section-num">01</div>
+    <div class="accent-line"></div>
+    <h2>Product Line<br>Rationalisation</h2>
+    <div class="section-sub">Identifying high-margin winners and pruning candidates</div>
+  </div>
+
+  <!-- Slide 4: Category Performance -->
+  <div class="slide slide-cards" data-title="Category Performance">
+    <h3>Category Performance</h3>
+    <div class="grid">
+      <div class="card">
+        <h4>Computers</h4>
+        <div class="num">$2.5M</div>
+        <p>606 products • 59.6% margin</p>
+      </div>
+      <div class="card">
+        <h4>Cell phones</h4>
+        <div class="num">$843K</div>
+        <p>285 products • 57.8% margin</p>
+      </div>
+      <div class="card">
+        <h4>Cameras</h4>
+        <div class="num">$826K</div>
+        <p>372 products • 60.8% margin</p>
+      </div>
+      <div class="card">
+        <h4>Home Appl.</h4>
+        <div class="num">$715K</div>
+        <p>661 products • 59.0% margin</p>
+      </div>
+      <div class="card">
+        <h4>TV & Video</h4>
+        <div class="num">$602K</div>
+        <p>222 products • 59.9% margin</p>
+      </div>
+      <div class="card">
+        <h4>Media</h4>
+        <div class="num">$403K</div>
+        <p>90 products • 62.0% margin</p>
+      </div>
+      <div class="card">
+        <h4>Audio</h4>
+        <div class="num">$303K</div>
+        <p>115 products • 59.0% margin</p>
+      </div>
+      <div class="card">
+        <h4>Games</h4>
+        <div class="num">$97K</div>
+        <p>166 products • 55.8% margin</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 5: Top Subcategories -->
+  <div class="slide slide-table" data-title="Top Performing Subcategories">
+    <h3>Top 5 Most Profitable Subcategories</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Subcategory</th>
+          <th>Category</th>
+          <th>Margin</th>
+          <th>Revenue</th>
+          <th>Margin %</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Desktops</td>
+          <td>Computers</td>
+          <td>$1,178,164</td>
+          <td>$2,043,741</td>
+          <td>57.6%</td>
+        </tr>
+        <tr>
+          <td>Projectors & Screens</td>
+          <td>Computers</td>
+          <td>$576,897</td>
+          <td>$902,997</td>
+          <td>63.9%</td>
+        </tr>
+        <tr>
+          <td>Laptops</td>
+          <td>Computers</td>
+          <td>$459,894</td>
+          <td>$782,456</td>
+          <td>58.8%</td>
+        </tr>
+        <tr>
+          <td>Touch Screen Phones</td>
+          <td>Cell phones</td>
+          <td>$442,842</td>
+          <td>$765,225</td>
+          <td>57.9%</td>
+        </tr>
+        <tr>
+          <td>Camcorders</td>
+          <td>Cameras and camcorders</td>
+          <td>$419,675</td>
+          <td>$688,565</td>
+          <td>60.9%</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Slide 6: Bottom Subcategories -->
+  <div class="slide slide-table" data-title="Underperforming Subcategories">
+    <h3>Bottom 5 Least Profitable Subcategories</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Subcategory</th>
+          <th>Category</th>
+          <th>Products</th>
+          <th>Margin</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Fans</td>
+          <td>Home Appliances</td>
+          <td>78</td>
+          <td>$4,964</td>
+          <td><span class="pill-sm pill-rose">Review</span></td>
+        </tr>
+        <tr>
+          <td>Boxed Games</td>
+          <td>Games and Toys</td>
+          <td>46</td>
+          <td>$14,211</td>
+          <td><span class="pill-sm pill-amber">Monitor</span></td>
+        </tr>
+        <tr>
+          <td>Cell phone Accessories</td>
+          <td>Cell phones</td>
+          <td>30</td>
+          <td>$17,256</td>
+          <td><span class="pill-sm pill-amber">Monitor</span></td>
+        </tr>
+        <tr>
+          <td>Lamps</td>
+          <td>Home Appliances</td>
+          <td>158</td>
+          <td>$19,345</td>
+          <td><span class="pill-sm pill-amber">Monitor</span></td>
+        </tr>
+        <tr>
+          <td>Home & Office Phones</td>
+          <td>Cell phones</td>
+          <td>92</td>
+          <td>$20,865</td>
+          <td><span class="pill-sm pill-amber">Monitor</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Slide 7: Discontinuation Recommendations -->
+  <div class="slide slide-bullets" data-title="Discontinuation Recommendations">
+    <h3>Recommended Actions</h3>
+    <ul>
+      <li><div class="b"></div><strong>Immediate discontinuation:</strong> 50 products generating less than $50 margin each — primarily low-volume cables, accessories, and fans</li>
+      <li><div class="b"></div><strong>Review subcategories:</strong> Fans (78 products, $4,964 margin total), Boxed Games (46 products), Cell phone Accessories (30 products)</li>
+      <li><div class="b"></div><strong>Focus investment:</strong> Desktops, Projectors, Laptops, and Touch Screen Phones drive 60% of total margin from Computers and Cell phones</li>
+      <li><div class="b"></div><strong>Capital redeployment:</strong> Pruning bottom 50 products frees up inventory capital with minimal revenue impact</li>
+    </ul>
+  </div>
+
+  <!-- Slide 8: Section Divider 2 -->
+  <div class="slide slide-section" data-title="Store Performance">
+    <div class="section-num">02</div>
+    <div class="accent-line"></div>
+    <h2>Store Performance<br>& Best Practice</h2>
+    <div class="section-sub">Benchmarking physical locations and identifying success patterns</div>
+  </div>
+
+  <!-- Slide 9: Store Rankings Top 10 -->
+  <div class="slide slide-table" data-title="Top 10 Stores">
+    <h3>Top 10 Performing Stores</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Store</th>
+          <th>Location</th>
+          <th>Revenue</th>
+          <th>Revenue/sqm</th>
+          <th>Margin %</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>50</td>
+          <td>United States — Kansas</td>
+          <td>$632,404</td>
+          <td>$316</td>
+          <td>59.6%</td>
+        </tr>
+        <tr>
+          <td>45</td>
+          <td>United States — Connecticut</td>
+          <td>$612,106</td>
+          <td>$306</td>
+          <td>58.9%</td>
+        </tr>
+        <tr>
+          <td>43</td>
+          <td>United States — Alaska</td>
+          <td>$587,807</td>
+          <td>$494</td>
+          <td>59.8%</td>
+        </tr>
+        <tr>
+          <td>55</td>
+          <td>United States — Nevada</td>
+          <td>$567,949</td>
+          <td>$284</td>
+          <td>57.6%</td>
+        </tr>
+        <tr>
+          <td>53</td>
+          <td>United States — Montana</td>
+          <td>$548,048</td>
+          <td>$435</td>
+          <td>58.3%</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Slide 10: Store Success Drivers -->
+  <div class="slide slide-bullets" data-title="Success Drivers">
+    <h3>What Drives Success</h3>
+    <ul>
+      <li><div class="b"></div><strong>Product mix dominance:</strong> All top 10 stores share Computers as their dominant category — aligning inventory to high-margin categories is critical</li>
+      <li><div class="b"></div><strong>Geographic concentration:</strong> All top 10 performers are in the United States, suggesting regional preference and market fit</li>
+      <li><div class="b"></div><strong>Space efficiency:</strong> Top performers achieve $284-$494 revenue per square meter, demonstrating effective merchandising density</li>
+      <li><div class="b"></div><strong>Consistent margins:</strong> Top stores maintain 57-60% margins, indicating effective pricing and cost control replication opportunities</li>
+    </ul>
+  </div>
+
+  <!-- Slide 11: Bottom 10 Stores -->
+  <div class="slide slide-table" data-title="Bottom 10 Stores">
+    <h3>Bottom 10 Performing Stores</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Store</th>
+          <th>Location</th>
+          <th>Revenue</th>
+          <th>Revenue/sqm</th>
+          <th>Years Active</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>14</td>
+          <td>France — Franche-Comté</td>
+          <td>$45,540</td>
+          <td>$130</td>
+          <td>2.0</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Australia — Tasmania</td>
+          <td>$54,723</td>
+          <td>$27</td>
+          <td>2.0</td>
+        </tr>
+        <tr>
+          <td>18</td>
+          <td>France — Mayotte</td>
+          <td>$59,498</td>
+          <td>$192</td>
+          <td>2.0</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Australia — ACT</td>
+          <td>$89,239</td>
+          <td>$150</td>
+          <td>2.0</td>
+        </tr>
+        <tr>
+          <td>17</td>
+          <td>France — Martinique</td>
+          <td>$89,738</td>
+          <td>$256</td>
+          <td>2.0</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Slide 12: Recommendations -->
+  <div class="slide slide-bullets" data-title="Strategic Recommendations">
+    <h3>Strategic Recommendations</h3>
+    <ul>
+      <li><div class="b"></div><strong>Online conversion priority:</strong> Bottom 10 stores generate $27-$256/sqm vs. top performers' $284-$494/sqm — assess online fulfilment as alternative for lowest performers</li>
+      <li><div class="b"></div><strong>Geographic reassessment:</strong> French and Australian regional stores underperform despite all being active 2+ years — evaluate market fit vs. execution issues</li>
+      <li><div class="b"></div><strong>Replicate best practice:</strong> Deploy Computers-dominant product mix from top US stores to underperformers with sufficient market size</li>
+      <li><div class="b"></div><strong>Phased intervention:</strong> Pilot online-only conversion at 2-3 bottom stores before broader rollout — test cost reduction vs. revenue retention</li>
+    </ul>
+  </div>
+
+  <!-- Floating Nav Dock -->
+  <div class="nav-dock" id="navDock">
+    <button class="arr" onclick="goTo(0)" title="First slide">&#x226A;</button>
+    <button class="arr" onclick="goPrev()">&#8249;</button>
+    <div class="sep"></div>
+    <div class="slide-title-area">
+      <span class="tnum" id="navNum">01</span>
+      <span class="ttext" id="navTitle"></span>
+    </div>
+    <div class="sep"></div>
+    <div class="page-count">
+      <span class="pc-current" id="navCurrent">1</span> / <span id="navTotal">0</span>
+    </div>
+    <div class="sep"></div>
+    <div class="pips" id="navPips"></div>
+    <div class="sep"></div>
+    <button class="theme-toggle" id="btnTheme" onclick="toggleTheme()" title="Toggle light/dark mode">&#9788;</button>
+    <div class="sep"></div>
+    <button class="arr" onclick="goNext()">&#8250;</button>
+    <button class="arr" onclick="goTo(total-1)" title="Last slide">&#x226B;</button>
+  </div>
+</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const total = slides.length;
+  let current = 0;
+
+  const pipsContainer = document.getElementById('navPips');
+  slides.forEach((s, i) => {
+    const pip = document.createElement('button');
+    const isSection = s.classList.contains('slide-section');
+    pip.className = (isSection ? 'pip-divider' : 'pip') + (i === 0 ? ' active' : '');
+    pip.onclick = () => goTo(i);
+    pipsContainer.appendChild(pip);
+  });
+  document.getElementById('navTotal').textContent = total;
+
+  function goTo(idx) {
+    if (idx < 0 || idx >= total) return;
+    slides[current].classList.remove('active');
+    current = idx;
+    slides[current].classList.add('active');
+    updateNav();
+  }
+  function goNext() { goTo(current + 1); }
+  function goPrev() { goTo(current - 1); }
+
+  function updateNav() {
+    const slide = slides[current];
+    document.getElementById('navNum').textContent = String(current + 1).padStart(2, '0');
+    document.getElementById('navTitle').textContent = slide.dataset.title || '';
+    document.getElementById('navCurrent').textContent = current + 1;
+    document.getElementById('progressFill').style.width = ((current + 1) / total * 100) + '%';
+    document.querySelectorAll('#navPips .pip, #navPips .pip-divider').forEach((p, i) =>
+      p.classList.toggle('active', i === current));
+  }
+
+  let isDark = true;
+  function toggleTheme() {
+    isDark = !isDark;
+    document.documentElement.classList.toggle('light', !isDark);
+    document.getElementById('btnTheme').innerHTML = isDark ? '&#9788;' : '&#9790;';
+  }
+
+  function setPrintMode(mode) {
+    document.documentElement.classList.toggle('print-dark', mode === 'dark');
+  }
+
+  document.getElementById('viewport').addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); goNext(); }
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); goPrev(); }
+  });
+
+  document.getElementById('viewport').addEventListener('click', (e) => {
+    if (e.target.closest('.nav-dock')) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    if (e.clientX - rect.left > rect.width / 2) goNext(); else goPrev();
+  });
+
+  function scaleViewport() {
+    const vp = document.getElementById('viewport');
+    const scale = Math.min(window.innerWidth / 1280, window.innerHeight / 720);
+    vp.style.transform = 'translate(-50%, -50%) scale(' + scale + ')';
+  }
+  window.addEventListener('resize', scaleViewport);
+  scaleViewport();
+
+  document.getElementById('viewport').focus();
+  updateNav();
+</script>
+
+</body>
+</html>

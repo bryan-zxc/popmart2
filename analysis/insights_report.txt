@@ -1,0 +1,107 @@
+================================================================================
+INITIATIVE 1: PRODUCT LINE RATIONALISATION
+================================================================================
+
+--- Category Profitability Summary ---
+Computers                      | Products:  606 | Revenue: $   4,203,489 | Margin: $   2,506,403 ( 59.6%)
+Cell phones                    | Products:  285 | Revenue: $   1,457,700 | Margin: $     842,733 ( 57.8%)
+Cameras and camcorders         | Products:  372 | Revenue: $   1,357,821 | Margin: $     825,685 ( 60.8%)
+Home Appliances                | Products:  661 | Revenue: $   1,212,068 | Margin: $     715,026 ( 59.0%)
+TV and Video                   | Products:  222 | Revenue: $   1,005,599 | Margin: $     602,380 ( 59.9%)
+Music, Movies and Audio Books  | Products:   90 | Revenue: $     650,175 | Margin: $     402,949 ( 62.0%)
+Audio                          | Products:  115 | Revenue: $     512,317 | Margin: $     302,512 ( 59.0%)
+Games and Toys                 | Products:  166 | Revenue: $     173,040 | Margin: $      96,526 ( 55.8%)
+
+--- Top 5 Most Profitable Subcategories ---
+Desktops                       (Computers           ) | $ 1,178,164 ( 57.6%)
+Projectors & Screens           (Computers           ) | $   576,897 ( 63.9%)
+Laptops                        (Computers           ) | $   459,894 ( 58.8%)
+Touch Screen Phones            (Cell phones         ) | $   442,842 ( 57.9%)
+Camcorders                     (Cameras and camcorders) | $   419,675 ( 60.9%)
+
+--- Bottom 5 Least Profitable Subcategories ---
+Fans                           (Home Appliances     ) | $     4,964 ( 54.6%) | 78 products
+Boxed Games                    (Games and Toys      ) | $    14,211 ( 57.7%) | 46 products
+Cell phones Accessories        (Cell phones         ) | $    17,256 ( 59.6%) | 30 products
+Lamps                          (Home Appliances     ) | $    19,345 ( 59.6%) | 158 products
+Home & Office Phones           (Cell phones         ) | $    20,865 ( 57.2%) | 92 products
+
+--- Products Recommended for Discontinuation ---
+(Bottom 50 by margin with sales in 2020-2021)
+
+Total candidates: 50
+ 1. SV USB Data Cable E600 Grey                        | Computers       | $       1 (  60.1%)
+ 2. SV USB Sync Charge Cable E700 Blue                 | Computers       | $       2 (  49.2%)
+ 3. Litware 20'' Box Fan E401 Yellow                   | Home Appliances | $       4 (  23.1%)
+ 4. SV USB Sync Charge Cable E700 White                | Computers       | $       4 (  57.1%)
+ 5. Contoso Power Inverter - DC to AC power inverter E | Computers       | $       5 (  49.1%)
+ 6. SV USB Data Cable E600 Pink                        | Computers       | $       5 (  54.2%)
+ 7. Contoso Smart Battery M901 Blue                    | Computers       | $       6 (  54.0%)
+ 8. Contoso Digital camera accessory kit M200 Grey     | Computers       | $       6 (  36.3%)
+ 9. Litware 92mm DBB Case Fan E1101 Black              | Home Appliances | $       7 (  49.0%)
+10. Contoso Ultraportable Neoprene Sleeve E30 Yellow   | Computers       | $       8 (  49.0%)
+... and 40 more
+
+--- Products with No Sales (2020-2021) ---
+Total products with no sales: 0
+
+================================================================================
+INITIATIVE 2: STORE PERFORMANCE & BEST PRACTICE
+================================================================================
+
+--- Store Performance Overview ---
+Physical   | Stores:  66 | Revenue: $    16,359,216 | Margin: $     9,750,909 ( 59.5%)
+Online     | Stores:   1 | Revenue: $     4,785,204 | Margin: $     2,837,518 ( 59.3%)
+
+--- Top 10 Performing Stores (by revenue) ---
+Store  50 | United States - Kansas                   | $   632,404 | $   316/sqm |  59.6% margin
+Store  45 | United States - Connecticut              | $   612,106 | $   306/sqm |  58.9% margin
+Store  43 | United States - Alaska                   | $   587,807 | $   494/sqm |  59.8% margin
+Store  55 | United States - Nevada                   | $   567,949 | $   284/sqm |  57.6% margin
+Store  53 | United States - Montana                  | $   548,048 | $   435/sqm |  58.3% margin
+Store  64 | United States - Washington DC            | $   518,096 | $   390/sqm |  59.8% margin
+Store  61 | United States - South Carolina           | $   507,776 | $   254/sqm |  58.7% margin
+Store  54 | United States - Nebraska                 | $   494,180 | $   247/sqm |  59.1% margin
+Store  65 | United States - West Virginia            | $   471,470 | $   264/sqm |  58.4% margin
+Store  51 | United States - Maine                    | $   470,784 | $   364/sqm |  58.4% margin
+
+--- Bottom 10 Performing Stores (by revenue) ---
+Store  14 | France - Franche-Comté                   | $    45,540 | $   130/sqm | 2.0y active
+Store   4 | Australia - Tasmania                     | $    54,723 | $    27/sqm | 2.0y active
+Store  18 | France - Mayotte                         | $    59,498 | $   192/sqm | 2.0y active
+Store   1 | Australia - Australian Capital Territory | $    89,239 | $   150/sqm | 2.0y active
+Store  17 | France - Martinique                      | $    89,738 | $   256/sqm | 2.0y active
+Store  13 | France - Corse                           | $    96,952 | $   396/sqm | 2.0y active
+Store  15 | France - La Réunion                      | $   116,156 | $   290/sqm | 2.0y active
+Store  16 | France - Limousin                        | $   122,249 | $   318/sqm | 2.0y active
+Store  31 | Netherlands - Drenthe                    | $   126,069 | $   116/sqm | 2.0y active
+Store  12 | France - Basse-Normandie                 | $   133,319 | $   381/sqm | 2.0y active
+
+--- Success Drivers: Dominant Categories at Top Performers ---
+Store  50 | United States - Kansas                   | Computers                     
+Store  45 | United States - Connecticut              | Computers                     
+Store  43 | United States - Alaska                   | Computers                     
+Store  55 | United States - Nevada                   | Computers                     
+Store  53 | United States - Montana                  | Computers                     
+Store  64 | United States - Washington DC            | Computers                     
+Store  61 | United States - South Carolina           | Computers                     
+Store  54 | United States - Nebraska                 | Computers                     
+Store  65 | United States - West Virginia            | Computers                     
+Store  51 | United States - Maine                    | Computers                     
+
+Dominant category distribution in top performers:
+  Computers                     : 10 stores
+
+--- Bottom Performers: Online Conversion Candidates ---
+Store  14 | France - Franche-Comté                   | $    45,540 | $   130/sqm
+Store   4 | Australia - Tasmania                     | $    54,723 | $    27/sqm
+Store  18 | France - Mayotte                         | $    59,498 | $   192/sqm
+Store   1 | Australia - Australian Capital Territory | $    89,239 | $   150/sqm
+Store  17 | France - Martinique                      | $    89,738 | $   256/sqm
+Store  13 | France - Corse                           | $    96,952 | $   396/sqm
+Store  15 | France - La Réunion                      | $   116,156 | $   290/sqm
+Store  16 | France - Limousin                        | $   122,249 | $   318/sqm
+Store  31 | Netherlands - Drenthe                    | $   126,069 | $   116/sqm
+Store  12 | France - Basse-Normandie                 | $   133,319 | $   381/sqm
+
+================================================================================

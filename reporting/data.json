@@ -1,0 +1,537 @@
+{
+  "overall": {
+    "total_revenue": 21144420.16217379,
+    "total_margin": 12588426.602173764,
+    "total_stores": 67,
+    "overall_margin_pct": 59.53545429774315
+  },
+  "categories": [
+    {
+      "category": "Computers",
+      "products": 606.0,
+      "revenue": 4203489.097069124,
+      "margin": 2506402.927069124,
+      "margin_pct": 59.626726017124895
+    },
+    {
+      "category": "Cell phones",
+      "products": 285.0,
+      "revenue": 1457699.710165822,
+      "margin": 842733.1101658219,
+      "margin_pct": 57.812531915092165
+    },
+    {
+      "category": "Cameras and camcorders",
+      "products": 372.0,
+      "revenue": 1357821.4972766312,
+      "margin": 825684.6272766311,
+      "margin_pct": 60.8095120700842
+    },
+    {
+      "category": "Home Appliances",
+      "products": 661.0,
+      "revenue": 1212068.0423383964,
+      "margin": 715026.2123383965,
+      "margin_pct": 58.992250217151486
+    },
+    {
+      "category": "TV and Video",
+      "products": 222.0,
+      "revenue": 1005599.2702080269,
+      "margin": 602379.7502080268,
+      "margin_pct": 59.90256437670379
+    },
+    {
+      "category": "Music, Movies and Audio Books",
+      "products": 90.0,
+      "revenue": 650175.3695410874,
+      "margin": 402948.7595410874,
+      "margin_pct": 61.97539593440771
+    },
+    {
+      "category": "Audio",
+      "products": 115.0,
+      "revenue": 512317.29175316193,
+      "margin": 302512.0017531619,
+      "margin_pct": 59.04778281403672
+    },
+    {
+      "category": "Games and Toys",
+      "products": 166.0,
+      "revenue": 173039.80273463557,
+      "margin": 96525.91273463561,
+      "margin_pct": 55.78249120097675
+    }
+  ],
+  "top_subcats": [
+    {
+      "subcategory": "Desktops",
+      "category": "Computers",
+      "margin_usd": 1178164.064734761,
+      "revenue_usd": 2043741.3847347607
+    },
+    {
+      "subcategory": "Projectors & Screens",
+      "category": "Computers",
+      "margin_usd": 576897.3730749851,
+      "revenue_usd": 902996.5330749851
+    },
+    {
+      "subcategory": "Laptops",
+      "category": "Computers",
+      "margin_usd": 459893.54604332894,
+      "revenue_usd": 782456.1060433288
+    },
+    {
+      "subcategory": "Touch Screen Phones",
+      "category": "Cell phones",
+      "margin_usd": 442841.7612017502,
+      "revenue_usd": 765225.39120175
+    },
+    {
+      "subcategory": "Camcorders",
+      "category": "Cameras and camcorders",
+      "margin_usd": 419674.9855379729,
+      "revenue_usd": 688564.565537973
+    }
+  ],
+  "bottom_subcats": [
+    {
+      "subcategory": "Fans",
+      "category": "Home Appliances",
+      "margin_usd": 4964.049559775733,
+      "revenue_usd": 9085.07955977573,
+      "product_count": 78
+    },
+    {
+      "subcategory": "Boxed Games",
+      "category": "Games and Toys",
+      "margin_usd": 14210.634859220962,
+      "revenue_usd": 24615.49485922096,
+      "product_count": 46
+    },
+    {
+      "subcategory": "Cell phones Accessories",
+      "category": "Cell phones",
+      "margin_usd": 17255.7661102783,
+      "revenue_usd": 28929.376110278306,
+      "product_count": 30
+    },
+    {
+      "subcategory": "Lamps",
+      "category": "Home Appliances",
+      "margin_usd": 19345.381679269154,
+      "revenue_usd": 32449.581679269155,
+      "product_count": 158
+    },
+    {
+      "subcategory": "Home & Office Phones",
+      "category": "Cell phones",
+      "margin_usd": 20865.310247518264,
+      "revenue_usd": 36493.790247518235,
+      "product_count": 92
+    }
+  ],
+  "discontinue": [
+    {
+      "product_name": "SV USB Data Cable E600 Grey",
+      "category": "Computers",
+      "subcategory": "Computers Accessories",
+      "margin_usd": 1.4472927019160966,
+      "revenue_usd": 2.407292701916097
+    },
+    {
+      "product_name": "SV USB Sync Charge Cable E700 Blue",
+      "category": "Computers",
+      "subcategory": "Computers Accessories",
+      "margin_usd": 1.96,
+      "revenue_usd": 3.98
+    },
+    {
+      "product_name": "Litware 20'' Box Fan E401 Yellow",
+      "category": "Home Appliances",
+      "subcategory": "Fans",
+      "margin_usd": 3.976751507920728,
+      "revenue_usd": 17.226751507920728
+    },
+    {
+      "product_name": "SV USB Sync Charge Cable E700 White",
+      "category": "Computers",
+      "subcategory": "Computers Accessories",
+      "margin_usd": 4.035471044735681,
+      "revenue_usd": 7.0654710447356806
+    },
+    {
+      "product_name": "Contoso Power Inverter - DC to AC power inverter E900 Black",
+      "category": "Computers",
+      "subcategory": "Computers Accessories",
+      "margin_usd": 4.66,
+      "revenue_usd": 9.5
+    },
+    {
+      "product_name": "SV USB Data Cable E600 Pink",
+      "category": "Computers",
+      "subcategory": "Computers Accessories",
+      "margin_usd": 5.104296553959823,
+      "revenue_usd": 9.424296553959824
+    },
+    {
+      "product_name": "Contoso Smart Battery M901 Blue",
+      "category": "Computers",
+      "subcategory": "Computers Accessories",
+      "margin_usd": 6.21,
+      "revenue_usd": 11.5
+    },
+    {
+      "product_name": "Contoso Digital camera accessory kit M200 Grey",
+      "category": "Computers",
+      "subcategory": "Computers Accessories",
+      "margin_usd": 6.250135612782225,
+      "revenue_usd": 17.240135612782225
+    },
+    {
+      "product_name": "Litware 92mm DBB Case Fan E1101 Black",
+      "category": "Home Appliances",
+      "subcategory": "Fans",
+      "margin_usd": 7.3500000000000005,
+      "revenue_usd": 14.99
+    },
+    {
+      "product_name": "Contoso Ultraportable Neoprene Sleeve E30 Yellow",
+      "category": "Computers",
+      "subcategory": "Computers Accessories",
+      "margin_usd": 7.6499999999999995,
+      "revenue_usd": 15.6
+    },
+    {
+      "product_name": "SV USB Data Cable E600 Black",
+      "category": "Computers",
+      "subcategory": "Computers Accessories",
+      "margin_usd": 8.108652605581128,
+      "revenue_usd": 15.308652605581129
+    },
+    {
+      "product_name": "Contoso Reserve Pen - Tablet Pen E200 Gold",
+      "category": "Computers",
+      "subcategory": "Computers Accessories",
+      "margin_usd": 8.248777311851688,
+      "revenue_usd": 15.338777311851688
+    },
+    {
+      "product_name": "Contoso Laptop Starter Bundle M200 Black",
+      "category": "Computers",
+      "subcategory": "Computers Accessories",
+      "margin_usd": 8.91,
+      "revenue_usd": 16.5
+    },
+    {
+      "product_name": "SV Keyboard E90 White",
+      "category": "Computers",
+      "subcategory": "Computers Accessories",
+      "margin_usd": 10.357604245640633,
+      "revenue_usd": 31.637604245640635
+    },
+    {
+      "product_name": "Contoso Expandable Cordless Phone System M008 White",
+      "category": "Cell phones",
+      "subcategory": "Home & Office Phones",
+      "margin_usd": 12.419999999999998,
+      "revenue_usd": 22.99
+    },
+    {
+      "product_name": "Contoso Home/Office Laptop Power Adapter E300 Grey",
+      "category": "Computers",
+      "subcategory": "Computers Accessories",
+      "margin_usd": 12.5,
+      "revenue_usd": 25.5
+    },
+    {
+      "product_name": "Contoso 512MB MP3 Player E51 Blue",
+      "category": "Audio",
+      "subcategory": "MP4&MP3",
+      "margin_usd": 12.74,
+      "revenue_usd": 25.98
+    },
+    {
+      "product_name": "Contoso Bright Light battery E20 Pink",
+      "category": "Computers",
+      "subcategory": "Computers Accessories",
+      "margin_usd": 13.189999999999998,
+      "revenue_usd": 26.9
+    },
+    {
+      "product_name": "Contoso Battery charger - bike E200 Black",
+      "category": "Computers",
+      "subcategory": "Computers Accessories",
+      "margin_usd": 14.01264988456095,
+      "revenue_usd": 44.46264988456095
+    },
+    {
+      "product_name": "Contoso Cables To Go USB 2.0 Hard Drive Enclosure E920 Grey",
+      "category": "Computers",
+      "subcategory": "Computers Accessories",
+      "margin_usd": 14.35764474975466,
+      "revenue_usd": 26.497644749754663
+    }
+  ],
+  "store_overview": [
+    {
+      "store_type": "Physical",
+      "stores": 66,
+      "revenue": 16359215.830723843,
+      "margin": 9750908.55072385
+    },
+    {
+      "store_type": "Online",
+      "stores": 1,
+      "revenue": 4785204.331449945,
+      "margin": 2837518.05144991
+    }
+  ],
+  "top_stores": [
+    {
+      "store_key": 50,
+      "country": "United States",
+      "state": "Kansas",
+      "revenue_usd": 632404.0400000003,
+      "margin_usd": 376715.46000000054,
+      "square_meters": 2000,
+      "revenue_per_sqm": 316.2020200000001
+    },
+    {
+      "store_key": 45,
+      "country": "United States",
+      "state": "Connecticut",
+      "revenue_usd": 612105.6599999999,
+      "margin_usd": 360625.66000000056,
+      "square_meters": 2000,
+      "revenue_per_sqm": 306.05283
+    },
+    {
+      "store_key": 43,
+      "country": "United States",
+      "state": "Alaska",
+      "revenue_usd": 587807.1199999995,
+      "margin_usd": 351704.49999999994,
+      "square_meters": 1190,
+      "revenue_per_sqm": 493.9555630252097
+    },
+    {
+      "store_key": 55,
+      "country": "United States",
+      "state": "Nevada",
+      "revenue_usd": 567948.5599999999,
+      "margin_usd": 327297.6599999998,
+      "square_meters": 2000,
+      "revenue_per_sqm": 283.97427999999996
+    },
+    {
+      "store_key": 53,
+      "country": "United States",
+      "state": "Montana",
+      "revenue_usd": 548047.5599999997,
+      "margin_usd": 319471.3800000001,
+      "square_meters": 1260,
+      "revenue_per_sqm": 434.9583809523807
+    },
+    {
+      "store_key": 64,
+      "country": "United States",
+      "state": "Washington DC",
+      "revenue_usd": 518096.15999999974,
+      "margin_usd": 309783.4000000003,
+      "square_meters": 1330,
+      "revenue_per_sqm": 389.54598496240584
+    },
+    {
+      "store_key": 61,
+      "country": "United States",
+      "state": "South Carolina",
+      "revenue_usd": 507776.4199999997,
+      "margin_usd": 298296.26000000024,
+      "square_meters": 2000,
+      "revenue_per_sqm": 253.88820999999984
+    },
+    {
+      "store_key": 54,
+      "country": "United States",
+      "state": "Nebraska",
+      "revenue_usd": 494180.05999999976,
+      "margin_usd": 292235.68,
+      "square_meters": 2000,
+      "revenue_per_sqm": 247.09002999999987
+    },
+    {
+      "store_key": 65,
+      "country": "United States",
+      "state": "West Virginia",
+      "revenue_usd": 471469.9399999998,
+      "margin_usd": 275485.39999999985,
+      "square_meters": 1785,
+      "revenue_per_sqm": 264.12881792717076
+    },
+    {
+      "store_key": 51,
+      "country": "United States",
+      "state": "Maine",
+      "revenue_usd": 470783.8199999998,
+      "margin_usd": 274854.6800000002,
+      "square_meters": 1295,
+      "revenue_per_sqm": 363.53962934362914
+    }
+  ],
+  "bottom_stores": [
+    {
+      "store_key": 14,
+      "country": "France",
+      "state": "Franche-Comt\u00e9",
+      "revenue_usd": 45539.98420108767,
+      "margin_usd": 29980.944201087666,
+      "square_meters": 350,
+      "revenue_per_sqm": 130.11424057453618
+    },
+    {
+      "store_key": 4,
+      "country": "Australia",
+      "state": "Tasmania",
+      "revenue_usd": 54723.11753135182,
+      "margin_usd": 23797.137531351844,
+      "square_meters": 2000,
+      "revenue_per_sqm": 27.36155876567591
+    },
+    {
+      "store_key": 18,
+      "country": "France",
+      "state": "Mayotte",
+      "revenue_usd": 59498.32276517559,
+      "margin_usd": 36631.26276517557,
+      "square_meters": 310,
+      "revenue_per_sqm": 191.9300734360503
+    },
+    {
+      "store_key": 1,
+      "country": "Australia",
+      "state": "Australian Capital Territory",
+      "revenue_usd": 89239.38776005215,
+      "margin_usd": 37070.44776005216,
+      "square_meters": 595,
+      "revenue_per_sqm": 149.98216430260865
+    },
+    {
+      "store_key": 17,
+      "country": "France",
+      "state": "Martinique",
+      "revenue_usd": 89738.20613287129,
+      "margin_usd": 58476.94613287128,
+      "square_meters": 350,
+      "revenue_per_sqm": 256.39487466534655
+    },
+    {
+      "store_key": 13,
+      "country": "France",
+      "state": "Corse",
+      "revenue_usd": 96951.7587121291,
+      "margin_usd": 65937.29871212914,
+      "square_meters": 245,
+      "revenue_per_sqm": 395.72146413113916
+    },
+    {
+      "store_key": 15,
+      "country": "France",
+      "state": "La R\u00e9union",
+      "revenue_usd": 116156.24260443701,
+      "margin_usd": 75430.522604437,
+      "square_meters": 400,
+      "revenue_per_sqm": 290.3906065110925
+    },
+    {
+      "store_key": 16,
+      "country": "France",
+      "state": "Limousin",
+      "revenue_usd": 122248.75361984002,
+      "margin_usd": 78646.07361983998,
+      "square_meters": 385,
+      "revenue_per_sqm": 317.5292301814026
+    },
+    {
+      "store_key": 31,
+      "country": "Netherlands",
+      "state": "Drenthe",
+      "revenue_usd": 126068.78202560793,
+      "margin_usd": 79651.3420256079,
+      "square_meters": 1085,
+      "revenue_per_sqm": 116.1924258300534
+    },
+    {
+      "store_key": 12,
+      "country": "France",
+      "state": "Basse-Normandie",
+      "revenue_usd": 133318.8179759741,
+      "margin_usd": 88171.03797597399,
+      "square_meters": 350,
+      "revenue_per_sqm": 380.9109085027831
+    }
+  ],
+  "top_insights": [
+    {
+      "store_key": 50,
+      "country": "United States",
+      "state": "Kansas",
+      "dominant_category": "Computers"
+    },
+    {
+      "store_key": 45,
+      "country": "United States",
+      "state": "Connecticut",
+      "dominant_category": "Computers"
+    },
+    {
+      "store_key": 43,
+      "country": "United States",
+      "state": "Alaska",
+      "dominant_category": "Computers"
+    },
+    {
+      "store_key": 55,
+      "country": "United States",
+      "state": "Nevada",
+      "dominant_category": "Computers"
+    },
+    {
+      "store_key": 53,
+      "country": "United States",
+      "state": "Montana",
+      "dominant_category": "Computers"
+    },
+    {
+      "store_key": 64,
+      "country": "United States",
+      "state": "Washington DC",
+      "dominant_category": "Computers"
+    },
+    {
+      "store_key": 61,
+      "country": "United States",
+      "state": "South Carolina",
+      "dominant_category": "Computers"
+    },
+    {
+      "store_key": 54,
+      "country": "United States",
+      "state": "Nebraska",
+      "dominant_category": "Computers"
+    },
+    {
+      "store_key": 65,
+      "country": "United States",
+      "state": "West Virginia",
+      "dominant_category": "Computers"
+    },
+    {
+      "store_key": 51,
+      "country": "United States",
+      "state": "Maine",
+      "dominant_category": "Computers"
+    }
+  ]
+}
