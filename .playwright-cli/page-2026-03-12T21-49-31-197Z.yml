@@ -1,0 +1,30 @@
+- generic [active] [ref=e2]:
+  - generic [ref=e5]:
+    - heading "Global Sales Analysis" [level=2] [ref=e8]:
+      - text: Global Sales
+      - text: Analysis
+    - generic [ref=e9]: Contoso Electronics • 2020-2021
+    - generic [ref=e10]: Strategic Review
+  - generic [ref=e11]:
+    - button "≪" [ref=e12] [cursor=pointer]
+    - button "‹" [ref=e13] [cursor=pointer]
+    - generic [ref=e15]:
+      - generic [ref=e16]: "01"
+      - generic [ref=e17]: Contoso Electronics
+    - generic [ref=e19]: 1 / 12
+    - generic [ref=e21]:
+      - button [ref=e22] [cursor=pointer]
+      - button [ref=e23] [cursor=pointer]
+      - button [ref=e24] [cursor=pointer]
+      - button [ref=e25] [cursor=pointer]
+      - button [ref=e26] [cursor=pointer]
+      - button [ref=e27] [cursor=pointer]
+      - button [ref=e28] [cursor=pointer]
+      - button [ref=e29] [cursor=pointer]
+      - button [ref=e30] [cursor=pointer]
+      - button [ref=e31] [cursor=pointer]
+      - button [ref=e32] [cursor=pointer]
+      - button [ref=e33] [cursor=pointer]
+    - button "☼" [ref=e35] [cursor=pointer]
+    - button "›" [ref=e37] [cursor=pointer]
+    - button "≫" [ref=e38] [cursor=pointer]
